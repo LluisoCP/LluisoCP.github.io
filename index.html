@@ -29,6 +29,7 @@
 				console.log("No SW")
 			}
 			window.addEventListener('beforeinstallprompt', e => {
+				console.log("beforeinstallprompt")
 			  e.preventDefault();
 			  deferredPrompt = e.originalEvent;
 			  setTimeout(() => btn.classList.add('show'), 2000)
