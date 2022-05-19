@@ -30,8 +30,8 @@
 			}
 			window.addEventListener('beforeinstallprompt', e => {
 				console.log("beforeinstallprompt")
-			  e.preventDefault();
-			  deferredPrompt = e.originalEvent;
+			  e.preventDefault()
+			  deferredPrompt = e
 			  btn.classList.add('show')
 			  btn.addEventListener('click', e => {
 			    // Show the prompt
