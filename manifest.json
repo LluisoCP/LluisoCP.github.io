@@ -1,0 +1,13 @@
+{
+	"name": "This is a test",
+	"short_name": "Testing",
+	"display": "fullscreen",
+	"start_url": "/s/index.html",
+	"scope": "/s/",
+	"background_color": "#1151bf",
+	"icons": [{
+		"src" : "dog.jpg",
+		"sizes":"474x392",
+		"type":"image/jpg"
+	}]
+}
