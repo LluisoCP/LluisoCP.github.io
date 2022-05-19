@@ -74,7 +74,7 @@
     		return registration
 			})
 			.then(registration => {
-				registration.getNotifications({tag:notificationTag}).then(notifications => {
+				registration.getNotifications({tag:"test_notif"}).then(notifications => {
 					notifications.forEach(notification => notification.close())
 				})
 			})
