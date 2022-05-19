@@ -3,7 +3,6 @@
 	"short_name": "Testing",
 	"display": "fullscreen",
 	"start_url": "/s/index.html",
-	"scope": "/s/",
 	"background_color": "#1151bf",
 	"icons": [{
 		"src" : "dog.jpg",
