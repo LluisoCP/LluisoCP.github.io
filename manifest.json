@@ -4,9 +4,21 @@
 	"display": "fullscreen",
 	"start_url": "/s/index.html",
 	"background_color": "#1151bf",
-	"icons": [{
-		"src" : "dog.jpg",
-		"sizes":"474x392",
-		"type":"image/jpg"
-	}]
+	"icons": [
+		{
+		"src" : "img/logo_100.png",
+		"sizes":"100x100",
+		"type":"image/png"
+		},
+		{
+		"src" : "img/logo_120.png",
+		"sizes":"120x120",
+		"type":"image/png"
+		},
+		{
+		"src" : "img/logo_180.png",
+		"sizes":"180x180",
+		"type":"image/png"
+		}
+	]
 }
