@@ -7,7 +7,7 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate', function(event) {
   console.log('Activate')
 })
-
+console.log(self.scope)
 self.addEventListener("periodicsync", e => {
   if (e.tag === "sz_test") {
     self.registration.showNotification("Notif", {
@@ -37,7 +37,7 @@ self.addEventListener("notificationclick", event => {
           }
         }
         if (!currentClient) {
-          return clients.openWindow("lluisocp.github.io/s/index.html")
+          return clients.openWindow("index.html")
         }
       })
       .catch(e => console.log(e.name, e.message, e.lineNumber))
