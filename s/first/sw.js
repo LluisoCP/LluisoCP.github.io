@@ -9,7 +9,7 @@ self.addEventListener('activate', function(event) {
 })
 console.log(self.registration.scope)
 self.addEventListener("periodicsync", e => {
-  if (e.tag === "sz_test") {
+  if (e.tag === "pbs_first") {
     self.registration.showNotification("Notif", {
       body: "Test notification!",
       icon: 'https://lluisocp.github.io/s/senzu_logo_medium.png',

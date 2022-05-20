@@ -4,12 +4,27 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Install</title>
-    <link rel="manifest" href="../manifest.json"/>
-    <link rel="stylesheet" href="index.css"/>
+    <!-- <link rel="manifest" href="../manifest.json"/> -->
     <link rel="icon" href="#"/>
+    <style type="text/css">
+    	body {
+    		position: fixed;
+    		left: 0;
+    		top: 0;
+    		right: 0;
+    		bottom: 0;
+    		margin: 0;
+    	}
+    	#text {
+    		position: absolute;
+    		left: 50%;
+    		top: 50%;
+    		transform: translate(-50%, -50%);
+    	}
+    </style>
 	</head>
 	<body>
-
+		<div id="text">SECOND</div>
 		<script type="text/javascript">
 			function manageNotificationsRequest(reg) {
 		    // Check syntax supported
@@ -30,7 +45,7 @@
 			      name: 'periodic-background-sync',
 			    }).then(status => {
 			      if (status.state === 'granted') {
-		          registration.periodicSync.register('sz_test', {
+		          registration.periodicSync.register('pbs_second', {
 			          // Register new sync every 24 hours
 		            minInterval: 24 * 60 * 60 * 1000 // 1 day
 		          })
