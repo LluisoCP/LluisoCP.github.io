@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Install</title>
-    <!-- <link rel="manifest" href="manifest.json"/> -->
+    <link rel="manifest" href="manifest.json"/>
     <link rel="stylesheet" href="index.css"/>
     <link rel="icon" href="#"/>
 	</head>
@@ -29,76 +29,6 @@
 			} else {
 				console.log("No SW")
 			}
-			function manageNotificationsRequest(reg) {
-		    // Check syntax supported
-		    if (checkNotificationPromise()) {
-		    // Promise-based syntax supported
-		      Notification.requestPermission().then(result => manageNotificationsResponse(result, reg))
-		    } else {
-		    // Callback-based syntax supported
-		      Notification.requestPermission(function(result) {
-		        manageNotificationsResponse(result, reg)
-		      })
-		    }
-			}
-			function manageNotificationsResponse(result, registration) {
-			  console.log(result)
-			  if (result === 'granted') {
-			    navigator.permissions.query({
-			      name: 'periodic-background-sync',
-			    }).then(status => {
-			      if (status.state === 'granted') {
-		          registration.periodicSync.register('sz_test', {
-			          // Register new sync every 24 hours
-		            minInterval: 24 * 60 * 60 * 1000 // 1 day
-		          })
-		          .then(() => console.log('Periodic background sync registered!'))
-		          .catch(e => console.error(`Periodic background sync failed:\nx${e}`))
-			      } else {
-			        console.info('Periodic background sync rejected.')
-			      }
-			    })
-			  }
-			}
-			function checkNotificationPromise() {
-			  try {
-			    Notification.requestPermission().then();
-			  } catch(e) {
-			    return false;
-			  }
-			  return true;
-			}
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw.js')
-				.then(registration => {
-					if (registration.installing) {
-						console.log("installing")
-					} else if (registration.waiting) {
-						console.log("waiting")
-					} else if (registration.active) {
-						console.log("active")
-					}
-				})
-			} else {
-				console.log("No SW")
-			}
-			navigator.serviceWorker.ready
-	    .then(registration => {
-	    	console.log("registration")
-	    	console.log(registration)
-	    	if ('periodicSync' in registration && 'Notification' in window && Notification.permissions !== 'granted') {
-	      	manageNotificationsRequest(registration) // These function are out of scope
-	    	} else {
-	    		console.log('Periodic background sync is not supported.')
-	    	}
-    		return registration
-			})
-			.then(registration => {
-				registration.getNotifications({tag:"test_notif"}).then(notifications => {
-					notifications.forEach(notification => notification.close())
-				})
-			})
-			/*
 			window.addEventListener('beforeinstallprompt', e => {
 				console.log("beforeinstallprompt")
 			  e.preventDefault()
@@ -120,7 +50,6 @@
 			    })
 			  })
 			})
-			*/
 
 		</script>
 	</body>

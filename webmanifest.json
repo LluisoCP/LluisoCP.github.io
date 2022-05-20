@@ -2,7 +2,7 @@
 	"name": "This is a test",
 	"short_name": "Testing",
 	"display": "fullscreen",
-	"start_url": "/s/first/index.html",
+	"start_url": "/s/second/index.html",
 	"background_color": "#1151bf",
 	"icons": [
 		{

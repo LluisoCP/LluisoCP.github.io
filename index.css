@@ -19,5 +19,11 @@ body {
 	padding: .5rem 1rem;
 	background-color: #1151bf;
 	box-shadow: 0 2px 3px 1px;
+	opacity: 0;
+	pointer-events: none;
 	transition: opacity .5s linear;
+}
+#btn.show {
+	opacity: 1;
+	pointer-events: auto;
 }
