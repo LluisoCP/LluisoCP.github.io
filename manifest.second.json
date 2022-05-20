@@ -3,21 +3,16 @@
 	"short_name": "Testing",
 	"display": "fullscreen",
 	"start_url": "/s/second/index.html",
-	"background_color": "#1151bf",
+	"background_color": "#f74636",
 	"icons": [
 		{
-		"src" : "img/logo_100.png",
-		"sizes":"100x100",
+		"src" : "img/senzu_logo_medium.png",
+		"sizes":"75x75",
 		"type":"image/png"
 		},
 		{
-		"src" : "img/logo_120.png",
-		"sizes":"120x120",
-		"type":"image/png"
-		},
-		{
-		"src" : "img/logo_180.png",
-		"sizes":"180x180",
+		"src" : "img/maker_medium.png",
+		"sizes":"200x200",
 		"type":"image/png"
 		}
 	]
