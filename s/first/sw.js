@@ -7,7 +7,7 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate', function(event) {
   console.log('Activate')
 })
-console.log(self.registration ? self.registration.scope : "No registration")
+console.log(self.registration.scope)
 self.addEventListener("periodicsync", e => {
   if (e.tag === "sz_test") {
     self.registration.showNotification("Notif", {
