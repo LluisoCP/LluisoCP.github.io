@@ -1,6 +1,6 @@
 {
-	"name": "This is a test",
-	"short_name": "Testing",
+	"name": "This is the second test",
+	"short_name": "Second",
 	"display": "fullscreen",
 	"start_url": "/s/second/index.html",
 	"background_color": "#f74636",
