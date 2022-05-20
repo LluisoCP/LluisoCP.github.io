@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Install</title>
-    <link rel="manifest" href="manifest.first.json"/>
-    <!-- <link rel="manifest" href="manifest.second.json"/> -->
+    <!-- <link rel="manifest" href="manifest.first.json"/> -->
+    <link rel="manifest" href="manifest.second.json"/>
     <link rel="stylesheet" href="index.css"/>
     <link rel="icon" href="#"/>
 	</head>
@@ -16,8 +16,8 @@
 			const btn = document.getElementById('btn')
 			let deferredPrompt;
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('sw.js', {scope: "/s/first/"})
-				// navigator.serviceWorker.register('sw.js', {scope: "/s/second/"})
+				// navigator.serviceWorker.register('sw.js', {scope: "/s/first/"})
+				navigator.serviceWorker.register('sw.js', {scope: "/s/second/"})
 				.then(registration => {
 					if (registration.installing) {
 						console.log("installing")
