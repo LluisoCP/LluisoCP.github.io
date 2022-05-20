@@ -84,7 +84,7 @@
 			}
 			navigator.serviceWorker.ready
 	    .then(registration => {
-	    	console.log(registration.scope)
+	    	console.log("SW active? : " + registration.active)
 	    	if ('periodicSync' in registration && 'Notification' in window && Notification.permissions !== 'granted') {
 	      	manageNotificationsRequest(registration) // These function are out of scope
 	    	} else {
