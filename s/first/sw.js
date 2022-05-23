@@ -18,7 +18,7 @@ self.addEventListener("periodicsync", e => {
       vibrate: [300, 100, 300],
       tag: "test_notif",
       // badge: '/public/static/dist/img/senzu_black_logo.svg'
-      badge: 'https://lluisocp.github.io/s/senzu_black_logo_small.png'
+      badge: 'https://lluisocp.github.io/s/first/senzu_black_logo_small.png'
     })
   }
 })
@@ -30,7 +30,7 @@ self.addEventListener("notificationclick", event => {
       .then(allClients => {
         let currentClient;
         for (let client of allClients) {
-          if(~client['url'].indexOf("lluisocp.github.io/s/")) {
+          if(~client['url'].indexOf("lluisocp.github.io/s/first")) {
             client.focus()
             currentClient = client
             break
