@@ -36,22 +36,18 @@ self.addEventListener("periodicsync", e => {
       self.registration.showNotification("First", {
         body: pbsMatches[0],
         icon: 'https://lluisocp.github.io/s/senzu_logo_medium.png',
-        // image: response.image ? response.image + '?size=75x75' : toCache[1],
         image: 'https://lluisocp.github.io/img/logo_180.png',
         vibrate: [300, 100, 300],
         tag: "test_notif",
-        // badge: '/public/static/dist/img/senzu_black_logo.svg'
         badge: 'https://lluisocp.github.io/s/second/senzu_black_logo_small.png'
       })
     } else if (~pbsMatch.indexOf("second")) {
       self.registration.showNotification("Second", {
         body: pbsMatches[0],
         icon: 'https://lluisocp.github.io/s/senzu_logo_medium.png',
-        // image: response.image ? response.image + '?size=75x75' : toCache[1],
         image: 'https://lluisocp.github.io/img/logo_180.png',
         vibrate: [300, 100, 300],
         tag: "test_notif",
-        // badge: '/public/static/dist/img/senzu_black_logo.svg'
         badge: 'https://lluisocp.github.io/s/second/senzu_black_logo_small.png'
       })
     }
