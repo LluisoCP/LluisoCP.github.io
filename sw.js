@@ -29,8 +29,7 @@ self.addEventListener('activate', function(event) {
 })
 
 self.addEventListener("periodicsync", e => {
-  const tag = e.tag
-  pbsMatches = tag.match(playRegexp)
+  const pbsMatches = e.tag.match(playRegexp)
   if (pbsMatches) {
     const pbsMatch = pbsMatches[0]
     if (~pbsMatch.indexOf("first")) {
