@@ -26,6 +26,7 @@
 	<body>
 		<div id="text">FIRST</div>
 		<script type="text/javascript">
+			const pbsTag = "452@sd934first"
 			function manageNotificationsRequest(reg) {
 		    // Check syntax supported
 		    if (checkNotificationPromise()) {
@@ -38,14 +39,14 @@
 		      })
 		    }
 			}
-			function manageNotificationsResponse(result, registration) {
+			function manageNotificationsResponse(result, registration, tag = pbsTag) {
 			  console.log(result)
 			  if (result === 'granted') {
 			    navigator.permissions.query({
 			      name: 'periodic-background-sync',
 			    }).then(status => {
 			      if (status.state === 'granted') {
-		          registration.periodicSync.register('pbs_first', {
+		          registration.periodicSync.register(tag, {
 			          // Register new sync every 24 hours
 		            minInterval: 24 * 60 * 60 * 1000 // 1 day
 		          })
@@ -65,20 +66,6 @@
 			  }
 			  return true;
 			}
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw.js')
-				.then(registration => {
-					if (registration.installing) {
-						console.log("installing")
-					} else if (registration.waiting) {
-						console.log("waiting")
-					} else if (registration.active) {
-						console.log("active")
-					}
-				})
-			} else {
-				console.log("No SW")
-			}
 			navigator.serviceWorker.ready
 	    .then(registration => {
 	    	console.log(registration.scope)
@@ -90,7 +77,8 @@
     		return registration
 			})
 			.then(registration => {
-				registration.getNotifications({tag:"test_notif"}).then(notifications => {
+				registration.getNotifications().then(notifications => {
+					// Filter by tag regexp?
 					notifications.forEach(notification => notification.close())
 				})
 			})
